@@ -6,11 +6,11 @@ import ejs from "gulp-ejs"; // "gulp-renameモジュールを読み込む
 import rename from "gulp-rename"; // "gulp-renameモジュールを読み込む
 import htmlbeautify from "gulp-html-beautify"; // "gulp-html-beautifyモジュールを読み込む
 import htmlhint from 'gulp-htmlhint'; // gulp-htmlhintのプラグインの読み込み
-// import fs from 'fs'; // ファイルシステム(fs)モジュールを読み込む
+import fs from 'fs'; // ファイルシステム(fs)モジュールを読み込む
 
 const html = (done) => { // "ejs"というgulpタスクを定義
-	// const json_path = dir.ejs.json + "site.json";
-  // const json = JSON.parse(fs.readFileSync(json_path));
+	const json_path = dir.src.html + "data/site.json";
+  const json = JSON.parse(fs.readFileSync(json_path));
 
 	gulp.src([dir.src.ejs + '**/*.ejs', "!" + dir.src.ejs + '**/_*.ejs']) // ejsファイルを指定、_で始まるファイルは除外
     .pipe(plumber({ // gulp-plumberでエラー検出時に監視タスクを中断しないようにする
@@ -19,10 +19,9 @@ const html = (done) => { // "ejs"というgulpタスクを定義
         message: '原因: <%= error.message %>' // デスクトップ通知時の本文
       })
     }))
-    .pipe(ejs())
-		// .pipe(ejs({ // EJSのHTMLコンパイルを実行
-		// 	jsonData: json, // オブジェクトjsonをjsonDataに渡す
-		// }))
+		.pipe(ejs({ // EJSのHTMLコンパイルを実行
+			jsonData: json, // オブジェクトjsonをjsonDataに渡す
+		}))
 		.pipe(
       htmlbeautify({
         indent_size: 2, //インデントサイズ

@@ -1,7 +1,8 @@
 export const dir = {
 	src: {
 		root: "src/",
-		ejs: "src/assets/ejs/",
+		html: "src/assets/html/",
+		ejs: "src/assets/html/ejs/pages/",
 		stylesheets: "src/assets/sass/",
 		javascripts: "src/assets/jsx/",
 		images: "src/assets/images/",
@@ -12,8 +13,5 @@ export const dir = {
 		stylesheets: "dist/assets/css/",
 		javascripts: "dist/assets/js/",
 		images: "dist/assets/images/",
-	},
-	ejs: {
-		json: "src/assets/ejs/data/"
 	},
 };
