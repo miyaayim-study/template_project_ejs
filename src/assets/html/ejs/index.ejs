@@ -1,0 +1,33 @@
+<%# ページIDを入力する %>
+<% const pageId = 'home'; %>
+
+<%# 定数 %>
+<%
+const baseUrl = json.pages[pageId].dir;
+%>
+
+<%# ヘッド %>
+<%- include(json.pages[pageId].dir + '_common/_head.ejs', {
+      pageId: pageId,
+      baseUrl: baseUrl
+    }) %>
+
+<%# ヘッダー %>
+<%- include(json.pages[pageId].dir + '_common/_header.ejs', {
+      pageId: pageId,
+      baseUrl: baseUrl
+    }) %>
+
+<%# メイン %>
+<%- include(json.pages[pageId].dir + '_contents/_main.ejs') %>
+
+<%# フッター %>
+<%- include(json.pages[pageId].dir + '_common/_footer.ejs', {
+      pageId: pageId,
+      baseUrl: baseUrl
+    }) %>
+
+<%# スクリプト %>
+<%- include(json.pages[pageId].dir + '_common/_script.ejs', {
+      baseUrl: baseUrl
+    }) %>

@@ -20,7 +20,7 @@ const html = (done) => { // "ejs"というgulpタスクを定義
       })
     }))
 		.pipe(ejs({ // EJSのHTMLコンパイルを実行
-			jsonData: json, // オブジェクトjsonをjsonDataに渡す
+			json: json, // オブジェクトjsonをjson（site.json）に渡す(jsonの名前は自由に変更可、index.ejsでその名前を使用する)
 		}))
 		.pipe(
       htmlbeautify({

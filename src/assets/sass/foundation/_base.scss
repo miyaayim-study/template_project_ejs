@@ -1,0 +1,24 @@
+// 文字コードの指定
+@charset "UTF-8";
+
+// 変数フォルダを参照している。
+// *マークをつけることで変数を呼び出すときの文字を省略している。
+@use "../global" as *;
+
+body {
+  font-family: 'Noto Sans JP';
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}

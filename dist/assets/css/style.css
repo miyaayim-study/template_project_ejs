@@ -1,5 +1,22 @@
+body {
+  font-family: "Noto Sans JP";
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
 header {
-  height: 5rem;
   padding: 1rem;
   background-color: lightcoral;
 }
@@ -24,7 +41,6 @@ main img:hover {
 }
 
 footer {
-  height: 5rem;
   padding: 1rem;
   background-color: lightblue;
 }

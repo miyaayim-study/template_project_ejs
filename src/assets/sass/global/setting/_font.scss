@@ -1,0 +1,56 @@
+// $baseFontSizeという変数名に16という値が代入される。
+// function（自作関数）は自分で作る関数。
+// Sassで自作関数を定義する方法は、以下のように記述します。
+// 引数を囲む( )は、引数があってもなくても必要です。
+// @function 関数名(引数) {
+//   @return
+// }
+
+// remをpx感覚で使う関数
+$baseFontsize: 16;
+@function rem($pixel) {
+	@return $pixel / $baseFontsize * 1rem;
+}
+
+// // vwをpx感覚で使う関数
+// @function vw($pixel) {
+// 	$viewport: 375; // 基準となるビューポート
+// 	@return ($pixel / $viewport * 100vw);
+// }
+
+
+// vwをpx感覚で使う関数（自作）
+@function vw-sp($pixel) {
+	$viewport: 375; // 基準となるビューポート
+	@return ($pixel / $viewport * 100vw);
+}
+
+@function vw-pc($pixel) {
+	$viewport: 1366; // 基準となるビューポート
+	@return ($pixel / $viewport * 100vw);
+}
+
+
+// line-height自動計算（@mixin）
+// デザインカンプ記載の数値を2つ入力するだけで自動計算
+@mixin line_height($pixels , $height) {
+	// font-size: $pixels * 1px;  //フォントサイズも入れてくれるがピクセル単位
+	line-height: $height / $pixels;
+}
+
+// line-height自動計算（@function）
+@function lh($pixels, $height) {
+	@return $height / $pixels;
+}
+
+
+
+// letter-spacing自動計算（@mixin）
+@mixin letter_spacing($spacing) {
+	letter-spacing: ($spacing / 1000 ) + em;
+}
+
+// letter-spacing自動計算（@function）
+@function ls($spacing) {
+	@return ($spacing / 1000 ) + em;
+}

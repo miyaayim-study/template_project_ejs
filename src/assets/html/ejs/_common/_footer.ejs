@@ -1,0 +1,12 @@
+  </main>
+  <!-- フッター -->
+  <footer>
+    <nav>
+      <ul>
+        <% for(const page in json.pages){ %>
+          <li><a href="/<%= page %>/"><%= json.pages[page].name %></a></li>
+        <% }; %>
+      </ul>
+    </nav>
+    <p><small>（c）<%= json.siteInfo.name %></small></p>
+  </footer>

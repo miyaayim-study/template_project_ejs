@@ -5,10 +5,12 @@
   },
   "pages": {
     "home": {
+      "dir": "",
       "name": "ホーム",
       "description": "ページの説明"
     },
     "work": {
+      "dir": "../",
       "name": "ワーク",
       "description": "ページの説明"
     }

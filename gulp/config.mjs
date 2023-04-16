@@ -1,17 +1,20 @@
+const srcBase = './src/assets/';
+const distBase = './dist/assets/';
+
 export const dir = {
 	src: {
-		root: "src/",
-		html: "src/assets/html/",
-		ejs: "src/assets/html/ejs/pages/",
-		stylesheets: "src/assets/sass/",
-		javascripts: "src/assets/jsx/",
-		images: "src/assets/images/",
+		root: './src/',
+		html: srcBase + "html/",
+		ejs: srcBase + "html/ejs/",
+		stylesheets: srcBase + "sass/",
+		javascripts: srcBase + "jsx/",
+		images: srcBase + "images/",
 	},
 	dist: {
 		root: "dist/",
 		html: "dist/",
-		stylesheets: "dist/assets/css/",
-		javascripts: "dist/assets/js/",
-		images: "dist/assets/images/",
+		stylesheets: distBase + "css/",
+		javascripts: distBase + "js/",
+		images: distBase + "images/",
 	},
 };

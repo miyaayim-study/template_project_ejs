@@ -1,0 +1,68 @@
+// マップ型変数
+// $変数名: ( "キー名1": 値1, "キー名2": 値2 );
+// map-get($変数名, "キー名")
+
+// 自作レスポンシブ
+@mixin sp {
+	@media screen and (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin pc {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+// 自作レスポンシブ2（2つしかブレイクポイントないなら微妙と思ったボツ案）
+// $mq-breakpoints: (
+//   "sp": "max-width: 767px",
+//   "pc": "min-width: 768px"
+// );
+
+// @mixin mq($breakpoint) {
+// 	@media screen and (map-get($mq-breakpoints, $breakpoint)) {
+// 		@content;
+// 	}
+// }
+
+
+
+// ネットにあったやつ
+// https://blanche-toile.com/web/sass-media-queries-mixin
+// $breakpoint: (
+//   sp: 'screen and (max-width: 767px)',
+//   tab: 'screen and (min-width: 768px)',
+//   pc: 'screen and (min-width: 1025px)'
+// );
+
+// @mixin mq($bp) {
+//   @media #{map-get($breakpoint, $bp)} {
+//    @content;
+//   }
+// }
+
+
+
+
+// // メディアクエリ
+// //ブレイクポイント変数設定（マップ型の変数）
+// $mq-breakpoints: ("xs": 320px, "sp": 480px, "tab": 600px, "pc" : 1025px, "full": 1100px);
+// /********************/
+
+// // スマホ基準のメディアクエリ
+// @mixin minmq($breakpoint: sp) {
+// 	@media screen and (min-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+// 		@content;
+// 	}
+// }
+
+// ※呼び出し例
+// .class {
+//  width: 50%;
+//  @include minmq(pc){
+// 	 width: 100%;
+// 	}
+// }
+
