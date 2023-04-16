@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+
+  <!-- OGP -->
+
+  <!-- Fonts -->
+
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+
+  <!-- CSS-->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- ファビコン -->
+
+
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <% if (pageId === 'home'){ %>
+      <h1>サイトタイトル</h1>
+    <% } else { %>
+      <p><a href="/">サイトタイトル</a></p>
+    <% } %>
+  </header>
+
+<!-- メイン -->
+<main>

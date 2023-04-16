@@ -1,0 +1,11 @@
+<% let title = 'トップページ'; %>
+<% let description = 'ディスクリプション'; %>
+<% let pageId = 'home'; %>
+<%- include('common/_header.ejs', { title: title, description: description, pageId: pageId }) %>
+
+  <h2>Main Content</h2>
+  <a href="#">
+    <img src="./assets/images/sample.jpeg" alt="sample">
+  </a>
+
+<%- include('common/_footer.ejs') %>

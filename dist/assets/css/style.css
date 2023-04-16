@@ -1,0 +1,33 @@
+header {
+  height: 5rem;
+  padding: 1rem;
+  background-color: lightcoral;
+}
+header h1 {
+  color: red;
+}
+
+main {
+  padding: 1rem;
+  background-color: #ddd;
+}
+main h2 {
+  color: #555;
+}
+main img {
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+main img:hover {
+  opacity: 0.5;
+}
+
+footer {
+  height: 5rem;
+  padding: 1rem;
+  background-color: lightblue;
+}
+footer p {
+  color: blue;
+}
