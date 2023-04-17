@@ -7,7 +7,7 @@ export const dir = {
 		html: srcBase + "html/",
 		ejs: srcBase + "html/ejs/",
 		stylesheets: srcBase + "sass/",
-		javascripts: srcBase + "jsx/",
+		javascripts: srcBase + "js/",
 		images: srcBase + "images/",
 	},
 	dist: {
