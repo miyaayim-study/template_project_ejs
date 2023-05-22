@@ -1,0 +1,24 @@
+@use "../../global/" as *;
+
+.u-font--heading {
+  font-family: $f-family-heading;
+  font-weight: $f-weight-medium;
+}
+
+.u-font--body {
+  font-family: $f-family-body;
+  font-weight: $f-weight-medium;
+}
+
+.u-font--heading {
+  font-family: $f-family-heading;
+  font-weight: $f-weight-extraBold;
+}
+
+.u-montserrat {
+  font-family: $f-family-NotoSans;
+}
+
+.u-bold {
+  font-weight: $f-weight-bold;
+}

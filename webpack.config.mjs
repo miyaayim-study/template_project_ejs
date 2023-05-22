@@ -13,6 +13,8 @@ export default {
 
   module: {
     rules: [ // モジュールに対するルールを定義する
+
+      // JSバンドル関係
       {
         test: /\.(js|jsx|ts|tsx)$/, // test = loaderを使う特定の拡張子を指定、今回は複数の拡張子に対応できるようにしてみた
         exclude: '/node_modules/', // Babelをかけないディレクトリを指定
@@ -24,12 +26,28 @@ export default {
             options: {
               presets: [
                 "@babel/preset-env",// ES5に変換
-              ]
-            }
-          }
-        ]
-      }
-    ]
+              ],
+            },
+          },
+        ],
+      },
+
+      // swiper（カルーセル）のCSS読み込みのために追加
+      {
+        test: /\.css$/, // 正規表現で.cssファイルを検知するためのテスト条件
+        use: [
+          {
+            loader: 'style-loader', // CSSをHTMLに適用するためのloader
+          },
+          {
+            loader: 'css-loader', // CSSを読み込むためのloader
+            options: { url: false }, // CSS内のURLを変換しないオプション
+          },
+        ],
+        sideEffects: true, // production modeでもswiper-bundle.cssが使えるように
+      },
+
+    ],
   },
   target: ["web", "es5"], // ES5(IE11等)向けの指定（webpack 5以上で必要）
   resolve: { // モジュールを解決するためのオプション

@@ -8,7 +8,7 @@ import webpackStream from 'webpack-stream';  // webpackをgulpで使用するた
 import webpackConfig from '../../webpack.config.mjs';  // webpackの設定ファイルの読み込み（作成したwebpack.configのコンフィグ情報を読み込む）
 
 const bundleWebpack = (done) => { // "webpack"というgulpタスクを定義、 (done)はラストのdone()でタスク完了の合図を受け取るためのもの
-  gulp.src(dir.src.javascripts + '*.js') // webpackを実行するJSファイルを指定
+  gulp.src(dir.src.javascripts + 'main.js') // webpackを実行するJSファイルを指定
 
     .pipe(
       plumber({

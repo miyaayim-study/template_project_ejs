@@ -1,33 +1,48 @@
 <%# ページIDを入力する %>
-<% const pageId = 'home'; %>
+<% pageId = 'top'; %>
 
-<%# 定数 %>
+<%# グローバル変数（全部に渡す） %>
 <%
-const baseUrl = json.pages[pageId].dir;
+baseUrl = json.pages[pageId].dir;
+imgUrl = baseUrl + 'assets/images/';
+%>
+
+<%# ローカル変数（一部に渡す） %>
+<%#
+const test = json.pages[pageId].dir;
 %>
 
 <%# ヘッド %>
-<%- include(json.pages[pageId].dir + '_common/_head.ejs', {
-      pageId: pageId,
-      baseUrl: baseUrl
-    }) %>
+<%- include(json.pages[pageId].dir + '_common/_head.ejs') %>
 
 <%# ヘッダー %>
-<%- include(json.pages[pageId].dir + '_common/_header.ejs', {
-      pageId: pageId,
-      baseUrl: baseUrl
-    }) %>
+<%- include(json.pages[pageId].dir + '_common/_header.ejs') %>
 
 <%# メイン %>
-<%- include(json.pages[pageId].dir + '_contents/_main.ejs') %>
+<!-- メイン -->
+<main class="l-main u-overflow--hidden">
+  <%- include(json.pages[pageId].dir + '_contents/_top/_cover.ejs') %>
+  <%- include(json.pages[pageId].dir + '_contents/_top/_about.ejs') %>
+
+  <div class="c-sectionBg c-sectionPading">
+    <div class="c-sectionBg--top"></div>
+    <div class="c-sectionFlex c-sectionWidth">
+      <%- include(json.pages[pageId].dir + '_contents/_top/_works.ejs') %>
+      <%- include(json.pages[pageId].dir + '_contents/_top/_culture.ejs') %>
+    </div>
+  </div>
+
+  <%- include(json.pages[pageId].dir + '_contents/_top/_topics.ejs') %>
+  <%- include(json.pages[pageId].dir + '_contents/_top/_contact.ejs') %>
+</main>
 
 <%# フッター %>
-<%- include(json.pages[pageId].dir + '_common/_footer.ejs', {
-      pageId: pageId,
-      baseUrl: baseUrl
-    }) %>
+<%- include(json.pages[pageId].dir + '_common/_footer.ejs') %>
 
 <%# スクリプト %>
-<%- include(json.pages[pageId].dir + '_common/_script.ejs', {
-      baseUrl: baseUrl
-    }) %>
+<%- include(json.pages[pageId].dir + '_common/_script.ejs') %>
+
+<%# 構文メモ用 %>
+<%# include(json.pages[pageId].dir + '_common/_footer.ejs', {
+  pageId: pageId
+}) %>

@@ -1,22 +1,4 @@
   <!-- ヘッダー -->
-  <header>
-    <% if (pageId === 'home'){ %>
-      <h1><%= json.siteInfo.name %></h1>
-    <% } else { %>
-      <a href="/"><%= json.siteInfo.name %></a>
-    <% } %>
+  <header class="l-header">
 
-    <nav>
-      <ul>
-        <% for(const page in json.pages){ %>
-          <% if (page === pageId) { %>
-            <li><%= json.pages[page].name %></li>
-          <% } else { %>
-            <li><a href="/<%= page %>/"><%= json.pages[page].name %></a></li>
-          <% } %>
-        <% }; %>
-      </ul>
-    </nav>
   </header>
-<!-- メイン -->
-<main>

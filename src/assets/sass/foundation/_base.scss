@@ -5,11 +5,17 @@
 // *マークをつけることで変数を呼び出すときの文字を省略している。
 @use "../global" as *;
 
+// html {
+//   scroll-behavior: smooth;
+// }
+
 body {
-  font-family: 'Noto Sans JP';
+  font-family: $f-family-body;
+  line-height: 1.7;
 }
 
 a {
+  color: #fff;
   text-decoration: none;
 }
 

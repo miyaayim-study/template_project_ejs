@@ -1,17 +1,1 @@
-main {
-  padding: 1rem;
-  background-color: #ddd;
-
-  h2 {
-    color: #555;
-  }
-
-  img {
-    transition: all 0.5s;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-}
+@use "global" as *;

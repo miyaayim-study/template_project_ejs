@@ -1,18 +1,25 @@
 {
   "siteInfo": {
-    "name": "サイト名",
-    "siteUrl": "サイトのドメイン"
+    "siteTitle": "〇〇会社"
   },
   "pages": {
-    "home": {
+    "top": {
       "dir": "",
-      "name": "ホーム",
-      "description": "ページの説明"
+      "name": "top",
+      "pageTitle": "〇〇会社",
+      "description": ""
     },
-    "work": {
+    "about": {
       "dir": "../",
-      "name": "ワーク",
-      "description": "ページの説明"
+      "name": "about",
+      "pageTitle": "～について",
+      "description": "～について"
+    },
+    "contact": {
+      "dir": "../",
+      "name": "contact",
+      "pageTitle": "お問い合わせ",
+      "description": "お問い合わせ"
     }
   }
 }

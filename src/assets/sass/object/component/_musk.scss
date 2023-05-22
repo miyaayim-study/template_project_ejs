@@ -1,0 +1,18 @@
+@use "../../global/" as *;
+
+// 画像を暗くするオーバーレイ
+.c-musk__black {
+  position: relative;
+
+  &::before {
+    content: "";
+    // ↓全体を覆うように配置
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // ↓暗いオーバーレイを半透明で配置
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

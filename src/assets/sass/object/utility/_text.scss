@@ -1,0 +1,43 @@
+@use "../../global/" as *;
+
+// font-weight
+.u-regular {
+  font-weight: 400;
+}
+
+.u-medium {
+  font-weight: 500;
+}
+
+.u-bold {
+  font-weight: 700;
+}
+
+.u-extraBold {
+  font-weight: 800;
+}
+
+.u-ultraBold {
+  font-weight: 800;
+}
+
+// font-feature-settings
+.u-pwid {
+  font-feature-settings: "pwid"; // プロポーショナル字形（文字ごとに幅を設定した字形）
+}
+
+.u-palt {
+  font-feature-settings: "palt"; // プロポーショナルメトリクス（自動文字詰め設定）
+}
+
+.u-pkna {
+  font-feature-settings: "pkna"; // プロポーショナルかな（かな関連の字形セットをプロポーショナル字形に）
+}
+
+.u-vkrn {
+  font-feature-settings: "vkrn"; // 縦組みペアカーニング（隣り合う文字ごとに文字詰めが設定される）
+}
+
+.u-vpal {
+  font-feature-settings: "vpal"; // 縦組みプロポーショナルメトリクス
+}

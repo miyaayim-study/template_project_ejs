@@ -16,9 +16,8 @@ export { allClean, htmlClean, cssClean, jsClean, imgClean }; // ファイル削�
 export { html as htmlTest }; // HTML構文チェック & HTML複製 関連
 export { compileSass as sassTest }; // Sassコンパイル 関連
 export { bundleWebpack as webpackTest }; // webpack 関連
-
-// gulp-imagemin（画像圧縮） 関連
-export {default as images } from "./gulp/task/images.mjs";
+  
+export { images as images }; // webpack 関連
 
 // ファイル監視 & ブラウザリロード
 const watchFiles = (done) => { // "watchFiles"というgulpタスクを定義、 (done)はラストのdone()でタスク完了の合図を受け取るためのもの
@@ -27,14 +26,22 @@ const watchFiles = (done) => { // "watchFiles"というgulpタスクを定義、
   gulp.watch(dir.src.ejs + "**/*.ejs", html); // htmlファイルの監視 ＆ HTML構文チェック & HTML複製
   gulp.watch(dir.src.stylesheets + "**/*.scss", compileSass); // scssファイルの監視 ＆ sassコンパイル & ベンダープレフィックス付与 & 構文チェック & プロパティ順序修正
   gulp.watch(dir.src.javascripts + "**/*.js", bundleWebpack); // jsxファイルの監視 ＆ webpackバンドル & 構文チェック
-  gulp.watch([dir.dist.html + "*.html", dir.dist.stylesheets + "*.css", dir.dist.javascripts + "*.js"], reload); // ファイルに変更があれば同期しているブラウザをリロード
+  gulp.watch([dir.dist.html + "**/*.html", dir.dist.stylesheets + "**/*.css", dir.dist.javascripts + "**/*.js"], reload); // ファイルに変更があれば同期しているブラウザをリロード
 
   done(); //done()でタスク完了の信号を出す
 };
 
+// 5秒間待機するだけのタスク（これで`gulp`実行時のサーバー起動タイミングをズラしている。gulp.seriesにしているが、ファイル生成完了前にサーバー起動してるっぽいので、多分gulpは終わってるけどwebpackは終わってないみたいな？）
+const wait = (done) => {
+  setTimeout(() => {
+    done();
+  }, 5000);
+}
+
+
 // npx gulp
-export const run = gulp.parallel(html, compileSass, bundleWebpack, images); // npx gulp runでコマンドを実行とき、指定したタスクを同時に実行、`parallel`は並列実行のこと、実行するタスク同士が依存関係にない場合に有効。
-export default gulp.series(run, server, watchFiles); // npx gulpでコマンドを実行した時、指定したタスクを左から順番に実行、「ファイル生成 → ブラウザ開く → ファイル監視」の順番でタスク実行している。`series`は並列実行のこと、実行するタスク同士が依存関係にある場合に有効。
+export const run = gulp.parallel(html, compileSass, bundleWebpack); // npx gulp runでコマンドを実行とき、指定したタスクを同時に実行、`parallel`は並列実行のこと、実行するタスク同士が依存関係にない場合に有効。
+export default gulp.series(run, wait, server, watchFiles); // npx gulpでコマンドを実行した時、指定したタスクを左から順番に実行、「ファイル生成 → ブラウザ開く → ファイル監視」の順番でタスク実行している。`series`は並列実行のこと、実行するタスク同士が依存関係にある場合に有効。
 
 // メモ
 // 「gulp --tasks」コマンドで実行可能なタスクが見れる

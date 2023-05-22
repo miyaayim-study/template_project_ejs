@@ -1,8 +1,9 @@
-<% const title = (pageId === 'home') ? json.siteInfo.name : json.pages[pageId].name + json.siteInfo.name%>
+<% const title = (pageId === 'top') ? json.pages[pageId].pageTitle : json.pages[pageId].pageTitle + "｜" + json.siteInfo.siteTitle%>
 <% const description = json.pages[pageId].description %>
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +11,9 @@
   <title><%= title %></title>
   <meta name="description" content="<%= description %>">
 
-  <!-- OGP -->
-
-  <!-- Fonts -->
-
-  <!-- リセットCSS -->
-  <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
-
   <!-- CSS-->
-  <link rel="stylesheet" href="<%= baseUrl %>assets/css/style.css">
-
-  <!-- ファビコン -->
+  <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
+
 <body>

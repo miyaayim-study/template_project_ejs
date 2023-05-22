@@ -9,8 +9,9 @@ const server = (done) => { // "sever"というgulpタスクを定義、 (done)�
     server : {
       open: "external", // ローカルIPアドレスを使って外部デバイスからWebサイトを開ける
       baseDir : dir.dist.root, // ルートとなるディレクトリを指定（これがないとCSSとJSがブラウザに反映されなかった）
-      index : 'index.html', // 読み込むHTMLファイル
+      index: 'index.html', // 読み込むHTMLファイル
     },
+    notify: false, // リロード時にブラウザ右上に表示される接続メッセージを非表示
     // reloadDelay: 1000,//リロードの遅延
     // open: false, //起動時のライブリロードを止める
   });

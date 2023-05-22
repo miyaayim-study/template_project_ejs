@@ -7,6 +7,7 @@ import notify from "gulp-notify"; // gulp-notifyモジュールを読み込む
 import gulpSass from "gulp-sass"; // gulp-sassパッケージのgulp-sassモジュールをインポートする
 import sassCompiler from "sass"; // sassパッケージに含まれるSassコンパイラ本体のsassモジュールをインポートする
 const sass = gulpSass(sassCompiler); // gulp-sassのコンストラクタ関数にsassコンパイラを渡して、コンパイラを使用するための定数sassを定義
+import sassGlob from "gulp-sass-glob-use-forward"; // gulp-sassのglob(@use、@forward用)
 
 // postcss 関連インポート
 import postcss from 'gulp-postcss'; // gulp-postcssパッケージをインポートする
@@ -27,6 +28,7 @@ const compileSass = (done) => { // "compileSass"というgulpタスクを定義�
     }))
 
 
+    .pipe(sassGlob()) // Sassの@importにおけるglobを有効にする
     .pipe(sass({ // 定数sassを実行
         outputStyle: "expanded" // 出力されるCSSの書式を"expanded"（展開形式）に設定する
       })

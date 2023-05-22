@@ -1,9 +1,4 @@
-footer {
-  padding: 1rem;
-  background-color: lightblue;
+@use "global" as *;
 
-  p {
-    color: blue;
-  }
-
+.l-footer {
 }

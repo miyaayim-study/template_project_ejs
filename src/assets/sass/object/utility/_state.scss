@@ -1,0 +1,99 @@
+@use "../../global/" as *;
+
+// .js-○○には処理内容を表す単語…スタイル調整無し
+// .is-○○には状態を表す単語…単独パーツに使用、クラス名とセットで個別にスタイル調整用
+// .u-state__…は復数パーツに使用
+
+// .u-state__left {
+//   transform: translateX(rem(-20));
+//   transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+//   &.is-show {
+//     transform: translate(0);
+//   }
+// }
+
+// .u-state__right {
+//   transform: translateX(rem(20));
+//   transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+//   &.is-show {
+//     transform: translate(0);
+//   }
+// }
+
+// .u-fadeIn {
+//   opacity: 0;
+//   &.is-show {
+//     opacity: 1;
+//     transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+//   }
+// }
+
+.u-fadeIn__top {
+  opacity: 0;
+  transform: translateY(rem(-6));
+  transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+
+  &.is-show {
+    opacity: 1;
+    transform: scale(1) translate(0);
+  }
+}
+
+.u-fadeIn__bottom {
+  opacity: 0;
+  transform: translateY(rem(6));
+  transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+
+  &.is-show {
+    opacity: 1;
+    transform: scale(1) translate(0);
+  }
+}
+
+.u-fadeIn__center {
+  opacity: 0;
+  transform: scale(1.05);
+  transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+
+  &.is-show {
+    opacity: 1;
+    transform: scale(1) translate(0);
+  }
+}
+
+.u-fadeIn__right {
+  opacity: 0;
+  transform: translateX(rem(20));
+  transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+  &.is-show {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.u-fadeIn__right--mqPcLeft {
+  opacity: 0;
+  transform: translateX(rem(20));
+  transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+  @include mq(pc) {
+    transform: translateX(rem(-20));
+  }
+  &.is-show {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.u-fadeIn__left {
+  opacity: 0;
+  transform: translateX(rem(-20));
+  transition: all 2s cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
+  &.is-show {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.u-delay--300ms {
+  transition-delay: 0.3s;
+}

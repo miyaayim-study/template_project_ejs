@@ -1,25 +1,25 @@
 {
-  "tagname-lowercase": true,
-  "attr-lowercase": true,
-  "attr-value-double-quotes": true,
-  "attr-value-not-empty": false,
-  "attr-no-duplication": true,
-  "doctype-first": true,
-  "tag-pair": true,
-  "empty-tag-not-self-closed": true,
-  "spec-char-escape": true,
-  "id-unique": true,
-  "src-not-empty": true,
-  "title-require": true,
-  "alt-require": true,
-  "doctype-html5": true,
-  "id-class-value": "dash",
-  "style-disabled": false,
-  "inline-style-disabled": false,
-  "inline-script-disabled": false,
-  "space-tab-mixed-disabled": "space",
-  "id-class-ad-disabled": false,
-  "href-abs-or-rel": false,
-  "attr-unsafe-chars": true,
-  "head-script-disabled": true
+  "tagname-lowercase": true,        // タグ名は小文字で書く
+  "attr-lowercase": true,           // 属性名は小文字で書く
+  "attr-value-double-quotes": true, // 属性値にはダブルクォーテーションを使う
+  "attr-value-not-empty": false,    // 属性値は空にできる
+  "attr-no-duplication": true,      // 属性は重複して書かない
+  "doctype-first": true,            // DOCTYPE宣言は先頭に書く
+  "tag-pair": true,                 // 開始タグと終了タグは対にする
+  "empty-tag-not-self-closed": true,// 空要素は自己閉じタグを使わない
+  "spec-char-escape": true,         // 特殊文字はエスケープする
+  "id-unique": true,                // ID属性は一意である
+  "src-not-empty": true,            // src属性は空にしない
+  "title-require": true,            // titleタグは必須
+  "alt-require": true,              // alt属性は必須
+  "doctype-html5": true,            // HTML5のDOCTYPE宣言を使う
+  "id-class-value": "lowercase-dash",  // IDとclassの値は小文字とハイフンで区切る（FLOCCS命名規則の為に修正）
+  "style-disabled": false,          // styleタグは使わない
+  "inline-style-disabled": false,   // インラインスタイルは使わない
+  "inline-script-disabled": false,  // インラインスクリプトは使わない
+  "space-tab-mixed-disabled": "space",  // スペースとタブの混在は許可しない
+  "id-class-ad-disabled": false,    // IDやclass名に広告のための単語を使わない
+  "href-abs-or-rel": false,         // href属性の絶対パスと相対パスの混在を許可する
+  "attr-unsafe-chars": true,        // 安全でない文字を属性値に含めることを許可しない
+  "head-script-disabled": true      // headタグ内にスクリプトを記述しない
 }
